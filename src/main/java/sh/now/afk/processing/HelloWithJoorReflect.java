@@ -3,12 +3,14 @@ package sh.now.afk.processing;
 import org.apache.commons.lang3.RandomUtils;
 import processing.core.PApplet;
 
-public class Hello extends PApplet {
+import static org.joor.Reflect.on;
+
+public class HelloWithJoorReflect extends PApplet {
     public static void main(String[] args) {
-        PApplet.runSketch(new String[]{"a", "b", "c"}, new Hello());
+        PApplet.runSketch(new String[]{"a", "b", "c"}, new HelloWithJoorReflect());
     }
 
-    char[] s;
+    byte[] s;
     float fontSize = 50;
 
     @Override
@@ -24,7 +26,7 @@ public class Hello extends PApplet {
         frameRate(1);
         textSize(fontSize);
         String hello_world = "HELLO WORLD";
-        s = hello_world.toCharArray();
+        s = on((Object) hello_world).get("value");
     }
 
     @Override
@@ -39,7 +41,7 @@ public class Hello extends PApplet {
                 float g = RandomUtils.nextFloat(0, 255);
                 float b = RandomUtils.nextFloat(0, 255);
                 fill(r, g, b);
-                text(s[j], x, y);
+                text((char) (s[j]), x, y);
             }
         }
     }
