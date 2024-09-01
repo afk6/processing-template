@@ -1,9 +1,12 @@
 package sh.now.afk.processing;
 
-import org.apache.commons.lang3.RandomUtils;
 import processing.core.PApplet;
 
+import java.util.Random;
+
 public class Hello extends PApplet {
+    private final Random random = new Random();
+
     public static void main(String[] args) {
         PApplet.runSketch(new String[]{"a", "b", "c"}, new Hello());
     }
@@ -35,9 +38,9 @@ public class Hello extends PApplet {
             float y = fontSize * i;
             for (int j = 0; j < s.length; j++) {
                 float x = fontSize * j;
-                float r = RandomUtils.nextFloat(0, 255);
-                float g = RandomUtils.nextFloat(0, 255);
-                float b = RandomUtils.nextFloat(0, 255);
+                float r = random.nextFloat(0, 255);
+                float g = random.nextFloat(0, 255);
+                float b = random.nextFloat(0, 255);
                 fill(r, g, b);
                 text(s[j], x, y);
             }
