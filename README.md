@@ -3,21 +3,27 @@ This Project is a skeleton for using [Processing](https://processing.org/) with 
 if anybody tend to use processing with Intellij IDEA,
 instead of [PDE](https://processing.org/download), can use this template.
 
-## setup
-follow these step:
+## requirement
+JDK 17+
 
-1. import this project as a maven project
-2. right click on `lib` dir
-3. select `Add as Library`
+## setup
+just import this project as a maven project
+
 
 ## verify
 run the `main` in `Hello.java`, should see a window popup like this.
 ![](doc/img/hello.gif)
 
-## tips
-processing 4 require JDK >=11, if `JDK17`, add these to `VM Options` for reflect.
 
-```
- --add-opens java.base/java.lang=ALL-UNNAMED 
+## emoji 
+to run the Emoji Example,
+the best openjdk build is JDK build by JetBrains, 
+[JetBrainsRuntime](https://github.com/JetBrains/JetBrainsRuntime/releases)
+other build may got monochrome output.
 
-```
+
+### jbr jdk
+![](doc/img/emoji.png)
+### plain jdk
+![](doc/img/emoji-no-color.png)
+
